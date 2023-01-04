@@ -76,7 +76,11 @@ main {
     color: #2596be;
     font-family: rickAndMorty;
     font-size: 3em; 
-    text-shadow: 0 0 3px #a1c74b, 0 0 5px #050505;
+    text-shadow: 
+    -1px 1px 0 #a1c74b,
+    1px 1px 0 #a1c74b,
+    1px -1px 0 #000,
+    -1px -1px 0 #000;
 }
 
 .information-container {
