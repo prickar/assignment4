@@ -1,0 +1,86 @@
+:root {
+    --text-color: #fff;
+}
+
+@font-face {
+    font-family: rickAndMorty;
+    src: url(../fonts/get_schwifty.ttf);
+  }
+
+html {
+    height: 100vh;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: url(../images/swirlback.png) no-repeat center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0;
+}
+
+header, 
+footer {
+    color: var(--text-color);
+    padding: 24px;
+    text-align: center;
+}
+
+main {
+    align-items: center;
+    display: flex; 
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-between;
+}
+
+.btn {
+    background-color: #2f9331;
+    border: 2px solid #fff;
+    color: #fff;
+    font-size: 16px;
+}
+
+.circle-image {
+    background: #a1c74b;
+    width: 200px;
+    height: 200px;
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    overflow: hidden;
+    animation: morph 3s linear infinite;
+}
+
+.image {
+    width: 100%;
+}
+
+@keyframes morph{
+    0%, 100% {
+    border-radius: 40% 60% 70% 30% / 40% 40% 60% 50%;
+    }
+    34% {
+      border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%;
+    }
+    67% {
+      border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+    }
+  }
+
+.character-name {
+    color: #2596be;
+    font-family: rickAndMorty;
+    font-size: 3em; 
+    text-shadow: 0 0 3px #a1c74b, 0 0 5px #050505;
+}
+
+.information-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
