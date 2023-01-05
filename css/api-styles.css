@@ -41,9 +41,11 @@ main {
 }
 
 .btn {
-    background-color: #2f9331;
-    border: 2px solid #fff;
-    color: #fff;
+    background-color: #fff;
+    border: 2px solid #2596be;
+    border-radius: 10px;
+    color: #2596be;
+    text-shadow: 0 0 3px #a1c74b, 0 0 3px #050505;
     font-size: 16px;
 }
 
