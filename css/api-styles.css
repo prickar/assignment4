@@ -5,7 +5,12 @@
 @font-face {
     font-family: rickAndMorty;
     src: url(../fonts/get_schwifty.ttf);
-  }
+}
+
+@font-face {
+    font-family: regularShallowGrave;
+    src: url(../fonts/shallowgrave-bb.regular.ttf);
+}
 
 html {
     height: 100vh;
@@ -45,7 +50,7 @@ main {
     border: 2px solid #2596be;
     border-radius: 10px;
     color: #2596be;
-    text-shadow: 0 0 3px #a1c74b, 0 0 3px #050505;
+    text-shadow: 0 0 2px #a1c74b, 0 0 4px #050505;
     font-size: 16px;
 }
 
@@ -56,6 +61,11 @@ main {
     border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
     overflow: hidden;
     animation: morph 3s linear infinite;
+    visibility: hidden;
+}
+
+.show-circle {
+    visibility: initial;
 }
 
 .image {
@@ -87,6 +97,14 @@ main {
 
 .information-container {
     align-items: center;
+    color: #2596be;
     display: flex;
+    text-shadow: 
+    -1px 1px 0 #a1c74b,
+    1px 1px 0 #a1c74b,
+    1px -1px 0 #000,
+    -1px -1px 0 #000;
     flex-direction: column;
+    font-family: regularShallowGrave;
+    font-size: 2em; 
 }

@@ -13,6 +13,7 @@ $(function() {
         .then((data) => {
             console.log(data);
 
+            $(".circle-image").addClass('show-circle');
             $(".character-name").text(data.name);
             $(".image").attr("src", data.image);
 
