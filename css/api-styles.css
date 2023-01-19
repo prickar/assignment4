@@ -109,6 +109,7 @@ main {
     flex-direction: column;
     font-family: regularShallowGrave;
     font-size: 2em; 
+    padding: 16px;
 }
 
 @media screen and (max-width:768px) {

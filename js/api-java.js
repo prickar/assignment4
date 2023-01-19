@@ -6,7 +6,6 @@ $(function() {
 
     function testingApi() {
         let id = Math.floor(Math.random() * 826);
-
         
         fetch(RICKANDMORTY + id)
         .then((response) => response.json())
