@@ -1,5 +1,5 @@
 :root {
-    --text-color: #fff;
+    --base-color: #fff;
     --primary-color: #a1c74b;
     --secondary-color: #2596be;
 }
@@ -13,6 +13,18 @@
     font-family: regularShallowGrave;
     src: url(../fonts/shallowgrave-bb.regular.ttf);
 }
+
+@keyframes morph{
+    0%, 100% {
+    border-radius: 40% 60% 70% 30% / 40% 40% 60% 50%;
+    }
+    34% {
+      border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%;
+    }
+    67% {
+      border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+    }
+  }
 
 html {
     height: 100vh;
@@ -33,37 +45,37 @@ body {
 
 header, 
 footer {
-    color: var(--text-color);
+    color: var(--base-color);
     display: flex; 
-    padding: 24px;
     justify-content: center;
+    padding: 24px;
 }
 
 main {
     align-items: center;
     display: flex; 
-    flex-grow: 1;
     flex-direction: column;
+    flex-grow: 1;
     justify-content: center;
     justify-content: space-between;
 }
 
 .btn {
-    background-color: #fff;
-    border: 2px solid var(--secondary-color);
+    background-color: var(--base-color);
     border-radius: 10px;
+    border: 2px solid var(--secondary-color);
     color: var(--secondary-color);
-    text-shadow: 0 1px var(--primary-color), 0 2px #050505;
     font-size: 16px;
+    text-shadow: 0 1px var(--primary-color), 0 2px var(--base-color);
 }
 
 .circle-image {
-    width: 200px;
-    height: 200px;
-    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
-    overflow: hidden;
     animation: morph 3s linear infinite;
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    height: 200px;
+    overflow: hidden;
     visibility: hidden;
+    width: 200px;
 }
 
 .show-circle {
@@ -74,45 +86,26 @@ main {
     width: 100%;
 }
 
-@keyframes morph{
-    0%, 100% {
-    border-radius: 40% 60% 70% 30% / 40% 40% 60% 50%;
-    }
-    34% {
-      border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%;
-    }
-    67% {
-      border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
-    }
-  }
-
 .character-name {
     color: var(--secondary-color);
     font-family: rickAndMorty;
     font-size: 3em; 
-    text-shadow: 
-    -1px 1px 0 var(--primary-color),
-    1px 1px 0 var(--primary-color),
-    1px -1px 0 #000,
-    -1px -1px 0 #000;
+    text-shadow: -1px 1px 0 var(--primary-color), 1px 1px 0 var(--primary-color), 1px -1px 0 var(--base-color), -1px -1px 0 var(--base-color);
 }
 
 .information-container {
     align-items: center;
     color: var(--secondary-color);
     display: flex;
-    text-shadow: 
-    -1px 1px 0 var(--primary-color),
-    1px 1px 0 var(--primary-color),
-    1px -1px 0 #000,
-    -1px -1px 0 #000;
     flex-direction: column;
     font-family: regularShallowGrave;
     font-size: 2em; 
     padding: 16px;
+    text-shadow: -1px 1px 0 var(--primary-color), 1px 1px 0 var(--primary-color), 1px -1px 0 var(--base-color), -1px -1px 0 var(--base-color);
 }
 
 @media screen and (max-width:768px) {
+
     .header-logo {
         width: 300px;
     }

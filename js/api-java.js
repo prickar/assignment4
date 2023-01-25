@@ -2,13 +2,20 @@ $(function() {
 
     const RICKANDMORTY = "https://rickandmortyapi.com/api/character/";
 
-    $(".btn").on("click", testingApi);
+    $(".btn").on("click", rickAndMortyApi);
 
-    function testingApi() {
+    function rickAndMortyApi() {
         let id = Math.floor(Math.random() * 826);
         
         fetch(RICKANDMORTY + id)
-        .then((response) => response.json())
+        .then((Response) => {
+          if (!Response.ok) {
+            throw new Error(Response.status)
+          } else {
+            return Response.json()
+          }
+        })
+        
         .then((data) => {
             console.log(data);
 
@@ -21,6 +28,10 @@ $(function() {
             $(".status").text(data.status);
 
     })
-  }
 
+    .catch(error => {
+      $("main").append($("<div class='error'>").text("something went wrnong : " + error));
+     })
+     
+  }
 })
