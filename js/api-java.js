@@ -2,12 +2,18 @@ $(function() {
 
     const RICKANDMORTY = "https://rickandmortyapi.com/api/character/";
 
-    $(".btn").on("click", rickAndMortyApi);
+    $("#randomBtn").on("click", () => {
+      let id = Math.floor(Math.random() * 826);
+      rickAndMortyApi(id);
+    });
 
-    function rickAndMortyApi() {
-        let id = Math.floor(Math.random() * 826);
-        
-        fetch(RICKANDMORTY + id)
+    $("#searchBtn").on("click", () => {
+      let searchName = $(".search-field").val();
+      rickAndMortyApi(searchName);
+    });
+
+    function rickAndMortyApi(caracterId) {
+        fetch(RICKANDMORTY + caracterId)
         .then((Response) => {
           if (!Response.ok) {
             throw new Error(Response.status)

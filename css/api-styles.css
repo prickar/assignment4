@@ -45,12 +45,15 @@ body {
 
 header, 
 footer {
-    color: var(--base-color);
     display: flex; 
     justify-content: center;
     padding: 24px;
 }
 
+span {
+    color: var(--base-color);
+    font-size: 0.9em;
+}
 main {
     align-items: center;
     display: flex; 
@@ -67,6 +70,10 @@ main {
     color: var(--secondary-color);
     font-size: 16px;
     text-shadow: 0 1px var(--primary-color), 0 2px var(--base-color);
+}
+
+.search-field {
+    width: 240px;
 }
 
 .circle-image {
