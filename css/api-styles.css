@@ -14,6 +14,18 @@
     src: url(../fonts/shallowgrave-bb.regular.ttf);
 }
 
+@-webkit-keyframes morph{
+    0%, 100% {
+    border-radius: 40% 60% 70% 30% / 40% 40% 60% 50%;
+    }
+    34% {
+      border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%;
+    }
+    67% {
+      border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+    }
+  }
+
 @keyframes morph{
     0%, 100% {
     border-radius: 40% 60% 70% 30% / 40% 40% 60% 50%;
@@ -31,13 +43,19 @@ html {
 }
 
 * {
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
 body {
     background: url(../images/swirlback.png) no-repeat center fixed;
     background-size: cover;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     height: 100%;
     margin: 0;
@@ -45,7 +63,11 @@ body {
 
 header, 
 footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex; 
+    -webkit-box-pack: center; 
+    -ms-flex-pack: center; 
     justify-content: center;
     padding: 24px;
 }
@@ -55,12 +77,25 @@ span {
     font-size: 0.9em;
 }
 main {
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex; 
-    flex-direction: column;
-    flex-grow: 1;
-    justify-content: center;
-    justify-content: space-between;
+    -webkit-box-orient: vertical; 
+    -webkit-box-direction: normal; 
+        -ms-flex-direction: column; 
+            flex-direction: column;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 }
 
 .btn {
@@ -77,6 +112,7 @@ main {
 }
 
 .circle-image {
+    -webkit-animation: morph 3s linear infinite;
     animation: morph 3s linear infinite;
     border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
     height: 200px;
@@ -101,9 +137,16 @@ main {
 }
 
 .information-container {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     color: var(--secondary-color);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     font-family: regularShallowGrave;
     font-size: 2em; 
